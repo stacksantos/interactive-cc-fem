@@ -395,7 +395,10 @@ ol {
   display: flex;
   align-items: center;
 }
-
+.justify {
+  display: flex;
+  justify-content: center;
+}
 .even {
   display: flex;
   justify-content: space-evenly;

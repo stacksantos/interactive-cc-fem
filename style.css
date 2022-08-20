@@ -3,13 +3,20 @@ body {
   height: 100%;
   color: #2f2534;
 }
+.attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
 .main {
   width: 100%;
   height: 100%;
   padding: 10rem 0rem;
 }
 .rightColumn {
-  width: 20rem;
+  width: 24rem;
   margin-left: 4em;
 }
 
@@ -26,16 +33,17 @@ body {
 /* FORM INFO */
 
 form {
-  font-size: 11px;
+  font-size: 15px;
   text-transform: uppercase;
 }
 
 input {
-  font-size: 13px;
+  font-size: 15px;
   border-radius: 5px;
   border: 1px solid #e0e0e0;
-  padding: 7px;
-  margin-bottom: 7px;
+  padding: 9px;
+  margin-bottom: 18px;
+  margin-top: 5px;
 }
 
 input::placeholder {
@@ -49,14 +57,20 @@ input::placeholder {
 #month,
 #year {
   width: 40px;
+  /* margin-bottom: 30px; */
 }
-
+#month,
+#year,
+#cvc {
+  margin-bottom: 30px;
+}
 #year {
-  margin-left: 5px;
+  margin-left: 8px;
 }
 
 button {
   padding: 10px;
+  width: 100%;
   border-radius: 9px;
   border: none;
   background-color: hsl(278, 68%, 11%);
@@ -66,6 +80,8 @@ button {
 /* FRONT CARD */
 .frontCardContainer {
   transform: translate(-4em, 2em);
+  position: relative;
+  height: 100%;
 }
 .frontCardContainer img {
   width: 23rem;
@@ -99,9 +115,16 @@ button {
   padding: 0em 2em;
   color: white;
 }
-#name {
-  margin-right: 15em;
+#cardName {
+  position: relative;
+  margin-left: 7px;
   text-transform: uppercase;
+  min-height: 100%;
+}
+.cardExpo {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
 }
 
 /* BACK CARD */
