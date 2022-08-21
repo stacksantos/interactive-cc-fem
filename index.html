@@ -53,19 +53,19 @@
           <label for="fullName">Cardholder Name</label><br>
           <input type="text" placeholder="e.g. Jane Appleseed" class="placeholder" id="cardHolder" autocomplete="name" autofocus maxlength="25" /><br>
           <label for="cardNumber">Card Number</label></br>
-          <input type="text" placeholder="e.g. 1234 5678 9123 0000" class="placeholder" autocomplete="cc-number" id="cardNumber" maxlength="16" /><br>
+          <input type="text" placeholder="e.g. 1234 5678 9123 0000" class="placeholder" autocomplete="off" id="cardNumber" maxlength="16" /><br>
           <section class="lowerForm row between align">
             <div>
               <label for="expDate">Exp. Date (MM/YY)</label><br>
               <div class="row">
-              <input type="text" placeholder="MM" id="month" autocomplete="cc-exp-month" />
-              <input type="text" placeholder="YY" id="year" autocomplete="cc-exp-year" />
+              <input type="text" placeholder="MM" id="month" autocomplete="cc-exp-month" maxlength="2" />
+              <input type="text" placeholder="YY" id="year" autocomplete="cc-exp-year" maxlength="2" />
               </div>
               
             </div>
             <div>
               <label for="CVC">CVC</label><br>
-              <input type="text" placeholder="e.g. 123 Confirm" id="cvc" />
+              <input type="text" placeholder="e.g. 123 Confirm" id="cvc" maxlength="3" />
             </div>
           </section>
           <button type="submit">Confirm</button>

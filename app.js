@@ -15,18 +15,38 @@ const input = document.querySelectorAll('input');
 setInterval(function checkInput() {
   input.forEach((input) => {
     input.addEventListener('keyup', () => {
+      // cardholder change
       if (input === cardHolder) {
         cardName.innerHTML = cardHolder.value;
         if (cardHolder.value === '') {
           cardName.innerHTML = 'Jane Appleseed';
         }
       }
-
+      // cardnumber change
       if (input === cardNumber) {
         frontNumbers.innerHTML = cardNumber.value;
-
         if (cardNumber.value === '') {
           frontNumbers.innerHTML = '0000 0000 0000 0000';
+        }
+      }
+      // expdate change
+      if (input === month) {
+        expoMonth.innerHTML = month.value;
+        if (month.value === '') {
+          expoMonth.innerHTML = '00';
+        }
+      }
+      if (input === year) {
+        expoYear.innerHTML = year.value;
+        if (year.value === '') {
+          expoYear.innerHTML = '00';
+        }
+      }
+      //cvc change
+      if (input === cvc) {
+        backInfo.innerHTML = cvc.value;
+        if (cvc === "") {
+          backInfo.innerHTML = "000"
         }
       }
     });
