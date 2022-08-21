@@ -31,7 +31,7 @@
             </div>
             <div class="lowerFrontCard">
               <!-- card number -->
-              <div id="frontNumbers">0000 0000 0000 0000</div>
+              <div id="frontNumbers"><span id="nSet1">0000</span>&nbsp;<span id="nSet2">0000</span>&nbsp;<span id="nSet3">0000</span>&nbsp;<span id="nSet4">0000</span></div>
               <!-- card name -->
               <div class="nameExpo row">
                 <div id="cardName">Jane Appleseed</div>
@@ -51,21 +51,21 @@
         <!-- from data -->
         <form action="">
           <label for="fullName">Cardholder Name</label><br>
-          <input type="text" placeholder="e.g. Jane Appleseed" class="placeholder" id="cardHolder" autocomplete="name" autofocus maxlength="25" /><br>
+          <input type="text" placeholder="e.g. Jane Appleseed" class="placeholder" id="cardHolder" autocomplete="off" autofocus maxlength="25" minlength="1" required /><br>
           <label for="cardNumber">Card Number</label></br>
-          <input type="text" placeholder="e.g. 1234 5678 9123 0000" class="placeholder" autocomplete="off" id="cardNumber" maxlength="16" /><br>
+          <input type="text" placeholder="e.g. 1234 5678 9123 0000" class="placeholder" autocomplete="off" id="cardNumber" minlength="16" maxlength="16" required /><br>
           <section class="lowerForm row between align">
             <div>
               <label for="expDate">Exp. Date (MM/YY)</label><br>
               <div class="row">
-              <input type="text" placeholder="MM" id="month" autocomplete="cc-exp-month" maxlength="2" />
-              <input type="text" placeholder="YY" id="year" autocomplete="cc-exp-year" maxlength="2" />
+              <input type="text" placeholder="MM" id="month" required autocomplete="cc-exp-month" maxlength="2"  />
+              <input type="text" placeholder="YY" id="year" required autocomplete="cc-exp-year" maxlength="2"  />
               </div>
               
             </div>
             <div>
               <label for="CVC">CVC</label><br>
-              <input type="text" placeholder="e.g. 123 Confirm" id="cvc" maxlength="3" />
+              <input type="text" placeholder="e.g. 123 Confirm" id="cvc" maxlength="3" required />
             </div>
           </section>
           <button type="submit">Confirm</button>
