@@ -19,66 +19,90 @@
   <body>
     <!-- background Image -->
     <section class="bgImage"><img src="./images/bg-main-desktop.png" alt=""></section>
+    <!-- ----------------------------------------------------------------------- -->
     <section class="main center">
       <section class="leftColumn">
         <section class="cardsPreview col">
-          <!-- front card -->
+
+          <!-- ----------------------------------------------------------------------- -->
+          <!--                            CARD FACING FRONT                            -->
+          <!-- ----------------------------------------------------------------------- -->
           <div class="frontCardContainer">
             <img src="./images/bg-card-front.png" alt="">
             <div class="circles">
               <div id="filledCircle"></div>
               <div id="emptyCircle"></div>
             </div>
-            <div class="lowerFrontCard">
-              <!-- card number -->
-              <div id="frontNumbers"><span id="nSet1">0000</span>&nbsp;<span id="nSet2">0000</span>&nbsp;<span id="nSet3">0000</span>&nbsp;<span id="nSet4">0000</span></div>
-              <!-- card name -->
-              <div class="nameExpo row">
-                <div id="cardName">Jane Appleseed</div>
-                <!-- card expo -->
-                <div class="cardExpo"><span id="expoMonth">00</span>/<span id="expoYear">00</span> </div>
+            <div class="bottomFrontCardContainer">
+              <!-- CARD NUMBER -->
+              <div id="displayNumbers"><span id="nSet1">0000</span>&nbsp;<span id="nSet2">0000</span>&nbsp;<span id="nSet3">0000</span>&nbsp;<span id="nSet4">0000</span></div>
+
+              <!-- ----------------------------------------------------------------------- -->
+              <div class="displayExpo row">
+                <!-- CARD NAME -->
+                <div id="displayName">Jane Appleseed</div>
+
+                <!-- CARD EXPO -->
+                <div class="expoContainer">
+                  <span id="displayMonth">00</span>/<span id="displayYear">00</span> </div>
               </div>
             </div>
           </div>
-          <!-- back card -->
+          <!-- ----------------------------------------------------------------------- -->
+          <!--                            CARD FACING BACK                             -->
+          <!-- ----------------------------------------------------------------------- -->
           <div class="backCardContainer">
             <img src="./images/bg-card-back.png" alt="">
             <div id="backInfo">000</div>
           </div>
         </section>
       </section>
-      <section class="rightColumn col">
-        <!-- from data -->
-        <form action="">
-          <label for="fullName">Cardholder Name</label><br>
-          <input type="text" placeholder="e.g. Jane Appleseed" class="placeholder" id="cardHolder" autocomplete="off" autofocus maxlength="25" minlength="1" required /><br>
-          <label for="cardNumber">Card Number</label></br>
-          <input type="text" placeholder="e.g. 1234 5678 9123 0000" class="placeholder" autocomplete="off" id="cardNumber" minlength="16" maxlength="16" required /><br>
-          <section class="lowerForm row between align">
-            <div>
+      
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                                FORM DATA                                -->
+        <!-- ----------------------------------------------------------------------- -->
+        <section class="formContainer col">
+        <form action="" >
+          <!-- NAME AND CC NUMBER -->
+          <label for="fName" id="cName">Cardholder Name </label><span id="nameErr" class="emsg"></span><br>
+          <input type="text" name="fName" id="fName" placeholder="e.g. Jane Appleseed" class="placeholder"  autocomplete="off" autofocus maxlength="25" minlength="5"  required /><br>
+          <label for="fNumber" id="cNumber">Card Number</label><span id="numberErr" class="emsg"></span></br>
+          <input type="text" name="fNumber" id="fNumber" placeholder="e.g. 1234 5678 9123 0000" class="placeholder" autocomplete="off"  minlength="16" maxlength="16" required /><br>
+          <!-- ----------------------------------------------------------------------- -->
+          <section class="lowerFormContainer row between align">
+            <div class="col selfStart">
+              <!-- EXPO DATE -->
               <label for="expDate">Exp. Date (MM/YY)</label><br>
               <div class="row">
-              <input type="text" placeholder="MM" id="month" required autocomplete="cc-exp-month" maxlength="2"  />
-              <input type="text" placeholder="YY" id="year" required autocomplete="cc-exp-year" maxlength="2"  />
+              <input type="text" name="fMonth" id="fMonth" pattern="[0-1][0-9]"  placeholder="MM"  required autocomplete="cc-exp-month" maxlength="2"  />
+              <input type="text" name="fYear" id="fYear" pattern="[2][3-8]"  placeholder="YY"  required autocomplete="cc-exp-year" maxlength="2"  />
               </div>
-              
+              <span id="expoErr" class="emsg"></span>
             </div>
             <div>
-              <label for="CVC">CVC</label><br>
-              <input type="text" placeholder="e.g. 123 Confirm" id="cvc" maxlength="3" required />
+              <!-- CVC NUMBER -->
+              <label for="fCvc">CVC</label><br>
+              <input type="text" name="fCvc" id="fCvc" pattern="[\d][\d][\d]" placeholder="e.g. 123 Confirm"  maxlength="3" required />
             </div>
           </section>
+          <!-- CONFIRM -->
           <button type="submit">Confirm</button>
         </form>
         
       </section>
     </section>
 
-    <!-- Completed state start -->
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                                COMPLETED                                -->
+    <!-- ----------------------------------------------------------------------- -->
+
     <section class="completed">
       Thank you! We've added your card details Continue
     </section>
 
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                               ATTRIBUTION                               -->
+    <!-- ----------------------------------------------------------------------- -->
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
