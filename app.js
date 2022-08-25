@@ -9,6 +9,8 @@ const displayYear = document.getElementById('displayYear');
 const fCvc = document.getElementById('fCvc');
 const backInfo = document.getElementById('backInfo');
 const input = document.querySelectorAll('input');
+const form = document.querySelector('form');
+const completed = document.querySelector('.completed');
 
 /* -------------------------------------------------------------------------- */
 /*                       FRONT CARD DISPLAY NUMBER SETS                       */
@@ -102,102 +104,108 @@ input.forEach((input) => {
 const nameErr = document.getElementById('nameErr');
 const numberErr = document.getElementById('numberErr');
 const expoErr = document.getElementById('expoErr');
+const cvcErr = document.getElementById('cvcErr');
 
-// name error
-fName.addEventListener('invalid', function (event) {
-  if (event.target.validity.valueMissing) {
-    event.target.setCustomValidity('');
-    event.preventDefault();
-    nameErr.innerHTML = " **You don't have a name?**";
-  } else if (event.target.validity.tooShort) {
-    event.target.setCustomValidity('');
-    event.preventDefault();
-    nameErr.innerHTML = ' **Name too short..**';
-  }
-});
-fName.addEventListener('change', function (event) {
-  if (fName.value.length >= 5) {
-    event.target.setCustomValidity('');
-    nameErr.innerHTML = '';
-  }
-});
 
-// card number error
-fNumber.addEventListener('invalid', function (event) {
-  if (event.target.validity.valueMissing) {
-    event.target.setCustomValidity('');
-    event.preventDefault();
-    numberErr.innerHTML = " **Where's the number?**";
-  } else if (event.target.validity.tooShort) {
-    event.target.setCustomValidity('');
-    event.preventDefault();
-    numberErr.innerHTML = ' **Must have at least 16 characters**';
-  }
-});
-fNumber.addEventListener('change', function (event) {
-  if (fNumber.value.length === 16) {
-    event.target.setCustomValidity('');
-    numberErr.innerHTML = '';
-  }
-});
+  // name error
+  fName.addEventListener('invalid', function (event) {
+    if (event.target.validity.valueMissing) {
+      event.target.setCustomValidity('');
+      event.preventDefault();
+      nameErr.innerHTML = " **You don't have a name?**";
+    } else if (event.target.validity.tooShort) {
+      event.target.setCustomValidity('');
+      event.preventDefault();
+      nameErr.innerHTML = ' **Name too short..**';
+    }
+  });
+  fName.addEventListener('change', function (event) {
+    if (fName.value.length >= 5) {
+      event.target.setCustomValidity('');
+      nameErr.innerHTML = '';
+    }
+  });
 
-// month error
+  // card number error
+  fNumber.addEventListener('invalid', function (event) {
+    if (event.target.validity.valueMissing) {
+      event.target.setCustomValidity('');
+      event.preventDefault();
+      numberErr.innerHTML = " **Where's the number?**";
+    } else if (event.target.validity.tooShort) {
+      event.target.setCustomValidity('');
+      event.preventDefault();
+      numberErr.innerHTML = ' **Must have at least 16 characters**';
+    }
+  });
+  fNumber.addEventListener('change', function (event) {
+    if (fNumber.value.length === 16) {
+      event.target.setCustomValidity('');
+      numberErr.innerHTML = '';
+    }
+  });
 
-fMonth.addEventListener('invalid', function (event) {
-  if (event.target.validity.valueMissing) {
-    event.target.setCustomValidity('');
-    event.preventDefault();
-    expoErr.innerHTML = ' **Something is missing**';
-  } else if (event.target.validity.patternMismatch) {
-    event.target.setCustomValidity('');
-    event.preventDefault();
-    expoErr.innerHTML = ' **Are you a time traveller?**';
-    if (fMonth.value[0] !== /[0-1]/ || fMonth.value > 12) {
+  // month error
+
+  fMonth.addEventListener('invalid', function (event) {
+    if (event.target.validity.valueMissing) {
+      event.target.setCustomValidity('');
+      event.preventDefault();
+      expoErr.innerHTML = ' **Something is missing**';
+    } else if (event.target.validity.patternMismatch) {
       event.target.setCustomValidity('');
       event.preventDefault();
       expoErr.innerHTML = ' **Are you a time traveller?**';
-    } else if (fMonth.value[0] === /[0-1]/ && fMonth.value[1] !== /[1-2]/) {
+      if (fMonth.value[0] !== /[0-1]/ || fMonth.value > 12) {
+        event.target.setCustomValidity('');
+        event.preventDefault();
+        expoErr.innerHTML = ' **Are you a time traveller?**';
+      } else if (fMonth.value[0] === /[0-1]/ && fMonth.value[1] !== /[1-2]/) {
+        event.target.setCustomValidity('');
+        event.preventDefault();
+        expoErr.innerHTML = ' **Are you a time traveller?**';
+      }
+    }
+  });
+  fMonth.addEventListener('change', function (event) {
+    if (event.target.validity) {
+      event.target.setCustomValidity('');
+      expoErr.innerHTML = '';
+    }
+  });
+
+  // year error
+
+  fYear.addEventListener('invalid', function (event) {
+    if (event.target.validity.valueMissing) {
+      event.target.setCustomValidity('');
+      event.preventDefault();
+      expoErr.innerHTML = ' **Something is missing**';
+    } else if (event.target.validity.patternMismatch) {
       event.target.setCustomValidity('');
       event.preventDefault();
       expoErr.innerHTML = ' **Are you a time traveller?**';
     }
-  }
-});
-fMonth.addEventListener('change', function (event) {
-  if (event.target.validity) {
-    event.target.setCustomValidity('');
-    expoErr.innerHTML = '';
-  }
-});
+  });
+  fYear.addEventListener('change', function (event) {
+    if (event.target.validity) {
+      event.target.setCustomValidity('');
+      expoErr.innerHTML = '';
+    }
+  });
 
-// year error
+  // cvc error
 
-fYear.addEventListener('invalid', function (event) {
-  if (event.target.validity.valueMissing) {
-    event.target.setCustomValidity('');
-    event.preventDefault();
-    expoErr.innerHTML = ' **Something is missing**';
-  } else if (event.target.validity.patternMismatch) {
-    event.target.setCustomValidity('');
-    event.preventDefault();
-    expoErr.innerHTML = ' **Are you a time traveller?**';
-    // if (fMonth.value[0] !== /[0-1]/) {
-    //   event.target.setCustomValidity('');
-    //   event.preventDefault();
-    //   expoErr.innerHTML = ' **Are you a time traveller?**';
-    // } else if (fMonth.value[0] === /[0-1]/ && fMonth.value[1] !== /[1-2]/) {
-    //   event.target.setCustomValidity('');
-    //   event.preventDefault();
-    //   expoErr.innerHTML = ' **Are you a time traveller?**';
-    // }
-  }
-});
-
-// cvc error
-
-fCvc.addEventListener('invalid', function (event) {
-  if (event.target.validity.valueMissing) {
-    event.target.setCustomValidity('');
-    event.preventDefault();
-  }
-})
+  fCvc.addEventListener('invalid', function (event) {
+    if (event.target.validity.valueMissing) {
+      event.target.setCustomValidity('');
+      event.preventDefault();
+      cvcErr.innerHTML = ' **No CVC?**';
+    }
+  });
+  fCvc.addEventListener('change', function (event) {
+    if (event.target.validity) {
+      event.target.setCustomValidity('');
+      cvcErr.innerHTML = '';
+    }
+  });

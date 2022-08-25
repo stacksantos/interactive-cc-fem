@@ -6,8 +6,10 @@ body {
 .attribution {
   font-size: 11px;
   text-align: center;
-  transform: translateX(-35em);
-  color: white;
+  color: black;
+  position: absolute;
+  bottom: 30px;
+  transform:translateX(30%);
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
@@ -17,6 +19,17 @@ body {
   height: 100%;
   padding: 10rem 0rem;
 }
+@media screen and (max-width: 360px) {
+  .main {
+    flex-direction: column;
+    padding: 0;
+    transform: translateY(20px);
+  }
+  .attribution {
+    transform: translateX(0);
+  }
+}
+
 .formContainer {
   width: 24rem;
   margin-left: 4em;
@@ -24,9 +37,21 @@ body {
 
 .bgImage img {
   position: absolute;
-  width: 40%;
+  width: 30%;
   height: 100%;
   z-index: -1;
+}
+@media screen and (max-width: 360px) {
+  body {
+    height: 100vh;
+    width: 360px;
+    overflow: hidden;
+  }
+  .bgImage img {
+    transform:rotate(90deg) translateX(-270px);
+    width: 360px;
+    height: 600px;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -48,13 +73,30 @@ input {
 }
 
 input::placeholder {
-  color: #e0e0e0;
+  color: #d3d3d3;
 }
 
 .placeholder {
   width: 96%;
 }
-
+@media screen and (max-width: 360px) {
+  form {
+    width: 85%;
+    height: 100%;
+  }
+  input {
+    padding: 16px;
+  }
+  .formContainer {
+    width: 100%;
+    margin-left: 50%;
+    transform:translateX(-20%);
+    margin-bottom: 0;
+  }
+  input::placeholder {
+    font-size: 18px;
+  }
+}
 /* -------------------------------------------------------------------------- */
 /*                                  EXPO DATE                                 */
 /* -------------------------------------------------------------------------- */
@@ -72,7 +114,11 @@ input::placeholder {
 #fYear {
   margin-left: 8px;
 }
-
+@media screen and (max-width: 360px) {
+  #fCvc {
+    width: 100px;
+  }
+}
 
 /* -------------------------------------------------------------------------- */
 
@@ -83,6 +129,11 @@ button {
   border: none;
   background-color: hsl(278, 68%, 11%);
   color: #dfd7e1;
+}
+@media screen and (max-width: 360px) {
+  button {
+    padding: 25px;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -139,12 +190,43 @@ button {
   bottom: 0;
   right: 20px;
 }
-
+@media screen and (max-width: 360px) {
+  .frontCardContainer {
+    transform: translate(-20px, -20px);
+    z-index: 1;
+  }
+  .frontCardContainer img {
+    width: 18rem;
+  }
+  #filledCircle {
+    width: 30px;
+    height: 30px;
+    transform: translate(1.5em, -8.8em)
+  }
+  #emptyCircle {
+    width: 12px;
+    height: 12px;
+    transform: translate(3.8em, -10.2em);
+  }
+  #displayNumbers {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .expoContainer{
+    right: 100px;
+    color: white;
+    right: 20px;
+  }
+  .cardsPreview {
+    height: 150px;
+  }
+}
 /* -------------------------------------------------------------------------- */
 /*                              BACK CARD DISPLAY                             */
 /* -------------------------------------------------------------------------- */
 
 .backCardContainer {
+  position: relative;
   transform: translateY(-3em);
 }
 .backCardContainer img {
@@ -158,13 +240,38 @@ button {
   transform: translate(18em, -7.4em);
   color: white;
 }
-
+@media screen and (max-width: 360px) {
+  .backCardContainer {
+    transform: translate(1.6em,-16.8em);
+  }
+  .backCardContainer img {
+    width: 18rem;
+    z-index: -1;
+  }
+  #backInfo {
+    color: white;
+    width: 10px;
+    transform: translate(13.5em, -6.2em);
+  }
+}
 /* -------------------------------------------------------------------------- */
 /*                           COMPLETED CONFIRMATION                           */
 /* -------------------------------------------------------------------------- */
 
 .completed {
-  display: none;
+  height: 100%;
+  width: 100%;
+}
+.completed img {
+  margin-bottom: 3em;
+  width: 6em;
+}
+.completed h3 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.completed p {
+  margin-bottom: 42px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -183,4 +290,9 @@ button {
 #expoErr {
   position: absolute;
   transform: translate(0px,70px);
+}
+
+#cvcErr {
+  position: absolute;
+  transform: translate(-200px,45px);
 }
