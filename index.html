@@ -11,30 +11,25 @@
       href="./images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Interactive card details form</title>
+    <title>Interactive card details form</title>
 
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
     <!-- background Image -->
-    <section class="bgImage"><img src="./images/bg-main-desktop.png" alt=""></section>
+    <section class="main">
     <!-- ----------------------------------------------------------------------- -->
-    <section class="main center">
-      <section class="leftColumn">
-    
-        <section class="cardsPreview col">
+    <section class="cardsContainer col">
+      <img src="./images/bg-main-desktop.png" alt="" class="bgImage">
 
           <!-- ----------------------------------------------------------------------- -->
           <!--                            CARD FACING FRONT                            -->
           <!-- ----------------------------------------------------------------------- -->
-          <div class="frontCardContainer">
+          <div class="frontCardContainer col">
             <img src="./images/bg-card-front.png" alt="">
-            <div class="circles">
               <div id="filledCircle"></div>
               <div id="emptyCircle"></div>
-            </div>
-            <div class="bottomFrontCardContainer">
               <!-- CARD NUMBER -->
               <div id="displayNumbers"><span id="nSet1">0000</span>&nbsp;<span id="nSet2">0000</span>&nbsp;<span id="nSet3">0000</span>&nbsp;<span id="nSet4">0000</span></div>
 
@@ -42,28 +37,27 @@
               <div class="displayExpo row">
                 <!-- CARD NAME -->
                 <div id="displayName">Jane Appleseed</div>
-
                 <!-- CARD EXPO -->
-                <div class="expoContainer">
-                  <span id="displayMonth">00</span>/<span id="displayYear">00</span> </div>
+                <div class="expoContainer row align">
+                  <span id="displayMonth">00</span>/<span id="displayYear">00</span> 
+                </div>
               </div>
-            </div>
           </div>
           <!-- ----------------------------------------------------------------------- -->
           <!--                            CARD FACING BACK                             -->
           <!-- ----------------------------------------------------------------------- -->
+          
+        
           <div class="backCardContainer">
             <img src="./images/bg-card-back.png" alt="">
             <div id="backInfo">000</div>
           </div>
-        </section>
-        
-      </section>
+          </section>
       
         <!-- ----------------------------------------------------------------------- -->
         <!--                                FORM DATA                                -->
         <!-- ----------------------------------------------------------------------- -->
-        <section class="formContainer col">
+        <section class="formContainer col align">
         <form action="success.html" >
           <!-- NAME AND CC NUMBER -->
           <label for="fName" id="cName">Cardholder Name </label><span id="nameErr" class="emsg"></span><br>
@@ -71,22 +65,24 @@
           <label for="fNumber" id="cNumber">Card Number</label><span id="numberErr" class="emsg"></span></br>
           <input type="text" name="fNumber" id="fNumber" placeholder="e.g. 1234 5678 9123 0000" class="placeholder" autocomplete="off"  minlength="16" maxlength="16" required /><br>
           <!-- ----------------------------------------------------------------------- -->
-          <section class="lowerFormContainer row between align">
-            <div class="col selfStart">
+          <section class="lowerFormContainer row">
               <!-- EXPO DATE -->
-              <label for="expDate">Exp. Date (MM/YY)</label><br>
+              <div class="col">
+              <label for="expDate">Exp. Date ( MM / YY )</label><br>
               <div class="row">
               <input type="text" name="fMonth" id="fMonth" pattern="[0-1][0-9]"  placeholder="MM"  required autocomplete="off" maxlength="2"  />
               <input type="text" name="fYear" id="fYear" pattern="[2][3-8]"  placeholder="YY"  required autocomplete="off" maxlength="2"  />
               </div>
               <span id="expoErr" class="emsg"></span>
-            </div>
-            <div>
+              </div>
+              
+            
               <!-- CVC NUMBER -->
+              <div class="col">
               <label for="fCvc">CVC</label><br>
-              <input type="text" name="fCvc" id="fCvc" pattern="[\d][\d][\d]" placeholder="e.g. 123 Confirm" autocomplete="off"  maxlength="3" required />
+              <input type="text" name="fCvc" id="fCvc" pattern="[\d][\d][\d]" placeholder="e.g. 123" autocomplete="off"  maxlength="3" required />
               <span id="cvcErr" class="emsg"></span>
-            </div>
+              </div>
           </section>
           <!-- CONFIRM -->
           <button type="submit">Confirm</button>
@@ -95,11 +91,8 @@
       <!-- ----------------------------------------------------------------------- -->
     <!--                               ATTRIBUTION                               -->
     <!-- ----------------------------------------------------------------------- -->
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by
+    <div class="attribution row center">
+      Built by &nbsp;
       <a href="https://stacksantos.dev" target="_blank">stackSantos</a>.
     </div>
     </section>
