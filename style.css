@@ -1,15 +1,15 @@
+
 body {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   color: #2f2534;
-  overflow: hidden;
 }
 
 .bgImage {
   width: 100%;
   height: 250px;
   z-index: -1;
-  display: block;  
+  display: block;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -21,55 +21,43 @@ body {
 .frontCardContainer {
   z-index: 1;
   position: fixed;
-  top: 160px;
-  left: 55%;
-  transform: translateX(-75%);
 }
 .frontCardContainer img {
-  width: 320px;
+  width: 280px;
   border-radius: 10px;
-  position: fixed;
+  position: absolute;
+}
+#filledCircle, #emptyCircle, #displayNumbers, .displayExpo, #displayName {
+  position: relative;
 }
 #filledCircle {
-  position: relative;
   background-color: white;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  top: 20px;
-  left: 20px;
+  top: 17px;
+  left: 10px;
 }
 #emptyCircle {
-  position: relative;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   border: 1px solid white;
-  left: 60px;
-  bottom: 2px;
+  top: -5px;
+  left: 52px;
 }
 #displayNumbers {
-  position: relative;
-  font-size: 24px;
+  font-size: 21px;
   color: white;
-  top: 50px;
-  left: 20px;
+  top: 20px;
 }
 .displayExpo {
-  position: relative;
   font-size: 11px;
   color: white;
-  top: 60px;
-  left: 20px;
 }
 #displayName {
-  position: relative;
   text-transform: uppercase;
   min-height: 100%;
-}
-.expoContainer {
-  position: absolute;
-  left: 240px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -77,23 +65,22 @@ body {
 /* -------------------------------------------------------------------------- */
 .backCardContainer {
   z-index: 0;
-  position: fixed;
+  position: absolute;
   top: 50px;
-  left: 46%;
-  transform: translateX(-490%);
+  right: 80%;
 }
 .backCardContainer img {
-  max-width: 320px;
+  width: 280px;
   border-radius: 10px;
   position: fixed;
 }
 
 #backInfo {
-  position: relative;
+  position: fixed;
   color: white;
   font-size: 13px;
-  top: 73px;
-  left: 255px;
+  /* top: 63px; */
+  /* left: 220px; */
 }
 
 /* -------------------------------------------------------------------------- */
@@ -101,26 +88,29 @@ body {
 /* -------------------------------------------------------------------------- */
 
 .formContainer {
-  margin-top: 140px;
-  width: 100%;
+  margin-top: 20%;
+}
+.lowerFormContainer {
+  width: 50%;
 }
 form {
   font-size: 15px;
   text-transform: uppercase;
-  width: 90%
-}
-
-input {
-  font-size: 15px;
-  border-radius: 10px;
-  border: 1px solid #e0e0e0;
-  padding: 18px;
-  margin-bottom: 18px;
-  margin-top: 5px;
   width: 90%;
 }
 
-input::placeholder {
+input {
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 18px;
+  margin-top: 5px;
+  width: 85vw;
+  min-height: 35px;
+  padding: .3em .5em;
+}
+
+input:placeholder-shown{
   color: #aaaaaa;
   font-size: 20px;
 }
@@ -131,31 +121,40 @@ input::placeholder {
 
 #fMonth,
 #fYear {
-  width: 20%;
+  width: 40px;
 }
+
 #fMonth,
 #fYear,
 #fCvc {
   margin-bottom: 30px;
 }
+.cvcContainer {
+  margin-left: 10%;
+}
 #fCvc {
-  width: 60%;
+  width: 80px;
+}
+#fMonth {
+  margin-right: 8px;
 }
 #fYear {
-  margin-left: 8px;
+  margin-right: 40px;
 }
 
 
 /* -------------------------------------------------------------------------- */
 
 button {
-  width: 100%;
+  min-width: 100%;
   height: 65px;
   border-radius: 9px;
   border: none;
   background-color: hsl(278, 68%, 11%);
   color: #dfd7e1;
   font-size: 24px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 
@@ -196,12 +195,12 @@ button {
 }
 #expoErr {
   position: absolute;
-  transform: translateY(90px);
+  transform: translateY(80px);
 }
 
 #cvcErr {
   position: absolute;
-  transform: translateY(90px);
+  transform: translateY(80px);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -212,8 +211,7 @@ button {
   font-size: 11px;
   text-align: center;
   color: black;
-  position: absolute;
-  bottom: 30px;
+  margin-top: 40px;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);

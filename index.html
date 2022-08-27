@@ -1,104 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+			crossorigin="anonymous"
+		/>
+		<title>Interactive card details form</title>
 
-    <title>Interactive card details form</title>
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./main.css" />
+	</head>
 
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./main.css" />
-  </head>
-  <body>
+	<body>
     <!-- background Image -->
-    <section class="main">
-    <!-- ----------------------------------------------------------------------- -->
-    <section class="cardsContainer col">
-      <img src="./images/bg-main-desktop.png" alt="" class="bgImage">
+			<img src="./images/bg-main-desktop.png" alt="" class="bgImage" />
+		<section class="main container-fluid">
+			
+			<!-- ----------------------------------------------------------------------- -->
+			<section class="cardsContainer container-fluid">
+				<!-- ----------------------------------------------------------------------- -->
+				<!--                            CARD FACING FRONT                            -->
+				<!-- ----------------------------------------------------------------------- -->
+				<div class="frontCardContainer">
+					<img src="./images/bg-card-front.png" alt="" />
+					<div class="container-fluid">
+						<div id="filledCircle"></div>
+						<div id="emptyCircle"></div>
+					</div>
+					<!-- CARD NUMBER -->
+					<div id="displayNumbers" class="container-fluid">
+						<span id="nSet1">0000</span>&nbsp;<span id="nSet2">0000</span
+						>&nbsp;<span id="nSet3">0000</span>&nbsp;<span id="nSet4"
+							>0000</span
+						>
+					</div>
 
-          <!-- ----------------------------------------------------------------------- -->
-          <!--                            CARD FACING FRONT                            -->
-          <!-- ----------------------------------------------------------------------- -->
-          <div class="frontCardContainer col">
-            <img src="./images/bg-card-front.png" alt="">
-              <div id="filledCircle"></div>
-              <div id="emptyCircle"></div>
-              <!-- CARD NUMBER -->
-              <div id="displayNumbers"><span id="nSet1">0000</span>&nbsp;<span id="nSet2">0000</span>&nbsp;<span id="nSet3">0000</span>&nbsp;<span id="nSet4">0000</span></div>
+					<!-- ----------------------------------------------------------------------- -->
+					<div class="displayExpo container-fluid mt-4">
+						<!-- CARD NAME -->
+						<div id="displayName" class="">Jane Appleseed</div>
+						<!-- CARD EXPO -->
+						<div class="expoContainer text-end">
+							<span id="displayMonth">00</span> / <span id="displayYear">00</span>
+						</div>
+					</div>
+				</div>
+				<!-- ----------------------------------------------------------------------- -->
+				<!--                            CARD FACING BACK                             -->
+				<!-- ----------------------------------------------------------------------- -->
 
-              <!-- ----------------------------------------------------------------------- -->
-              <div class="displayExpo row">
-                <!-- CARD NAME -->
-                <div id="displayName">Jane Appleseed</div>
-                <!-- CARD EXPO -->
-                <div class="expoContainer row align">
-                  <span id="displayMonth">00</span>/<span id="displayYear">00</span> 
-                </div>
-              </div>
-          </div>
-          <!-- ----------------------------------------------------------------------- -->
-          <!--                            CARD FACING BACK                             -->
-          <!-- ----------------------------------------------------------------------- -->
-          
-        
-          <div class="backCardContainer">
-            <img src="./images/bg-card-back.png" alt="">
-            <div id="backInfo">000</div>
-          </div>
-          </section>
-      
-        <!-- ----------------------------------------------------------------------- -->
-        <!--                                FORM DATA                                -->
-        <!-- ----------------------------------------------------------------------- -->
-        <section class="formContainer col align">
-        <form action="success.html" >
-          <!-- NAME AND CC NUMBER -->
-          <label for="fName" id="cName">Cardholder Name </label><span id="nameErr" class="emsg"></span><br>
-          <input type="text" name="fName" id="fName" placeholder="e.g. Jane Appleseed" class="placeholder"  autocomplete="off" autofocus maxlength="25" minlength="5"  required /><br>
-          <label for="fNumber" id="cNumber">Card Number</label><span id="numberErr" class="emsg"></span></br>
-          <input type="text" name="fNumber" id="fNumber" placeholder="e.g. 1234 5678 9123 0000" class="placeholder" autocomplete="off"  minlength="16" maxlength="16" required /><br>
-          <!-- ----------------------------------------------------------------------- -->
-          <section class="lowerFormContainer row">
-              <!-- EXPO DATE -->
-              <div class="col">
-              <label for="expDate">Exp. Date ( MM / YY )</label><br>
-              <div class="row">
-              <input type="text" name="fMonth" id="fMonth" pattern="[0-1][0-9]"  placeholder="MM"  required autocomplete="off" maxlength="2"  />
-              <input type="text" name="fYear" id="fYear" pattern="[2][3-8]"  placeholder="YY"  required autocomplete="off" maxlength="2"  />
-              </div>
-              <span id="expoErr" class="emsg"></span>
-              </div>
-              
-            
-              <!-- CVC NUMBER -->
-              <div class="col">
-              <label for="fCvc">CVC</label><br>
-              <input type="text" name="fCvc" id="fCvc" pattern="[\d][\d][\d]" placeholder="e.g. 123" autocomplete="off"  maxlength="3" required />
-              <span id="cvcErr" class="emsg"></span>
-              </div>
-          </section>
-          <!-- CONFIRM -->
-          <button type="submit">Confirm</button>
-        </form>
-      </section>
-      <!-- ----------------------------------------------------------------------- -->
-    <!--                               ATTRIBUTION                               -->
-    <!-- ----------------------------------------------------------------------- -->
-    <div class="attribution row center">
-      Built by &nbsp;
-      <a href="https://stacksantos.dev" target="_blank">stackSantos</a>.
-    </div>
-    </section>
-    
+				<div class="backCardContainer">
+					<img src="./images/bg-card-back.png" alt="" />
+					<div id="backInfo">000</div>
+				</div>
+			</section>
 
-    
-    <script src="./app.js"></script>
-  </body>
+			<!-- ----------------------------------------------------------------------- -->
+			<!--                                FORM DATA                                -->
+			<!-- ----------------------------------------------------------------------- -->
+			<section class="formContainer">
+				<form action="success.html">
+					<!-- NAME AND CC NUMBER -->
+					<label for="fName" id="cName">Cardholder Name </label
+					><span id="nameErr" class="emsg"></span>
+					<input
+						type="text"
+						name="fName"
+						id="fName"
+						placeholder="e.g. Jane Appleseed"
+						class="placeholder"
+						autocomplete="off"
+						autofocus
+						maxlength="25"
+						minlength="5"
+						required
+					/>
+					<label for="fNumber" id="cNumber">Card Number</label
+					><span id="numberErr" class="emsg"></span>
+					<input
+						type="text"
+						name="fNumber"
+						id="fNumber"
+						placeholder="e.g. 1234 5678 9123 0000"
+						class="placeholder"
+						autocomplete="off"
+						minlength="16"
+						maxlength="16"
+						required
+					/>
+					<!-- ----------------------------------------------------------------------- -->
+					<div class="lowerFormContainer">
+						<!-- EXPO DATE -->
+						<div class="">
+							<label for="expDate">Exp. Date ( MM / YY )</label>
+							<div class="">
+								<input
+									type="text"
+									name="fMonth"
+									id="fMonth"
+									pattern="[0-1][0-9]"
+									placeholder="MM"
+									required
+									autocomplete="off"
+									maxlength="2"
+								/>
+								<input
+									type="text"
+									name="fYear"
+									id="fYear"
+									pattern="[2][3-8]"
+									placeholder="YY"
+									required
+									autocomplete="off"
+									maxlength="2"
+								/>
+							</div>
+							<span id="expoErr" class="emsg"></span>
+						</div>
+						<div class="cvcContainer">
+							<label for="fCvc">CVC</label>
+							<input
+								type="text"
+								name="fCvc"
+								id="fCvc"
+								pattern="[\d][\d][\d]"
+								placeholder="e.g. 123"
+								autocomplete="off"
+								maxlength="3"
+								required
+							/>
+							<span id="cvcErr" class="emsg"></span>
+						</div>
+					</div>
+
+					<!-- CONFIRM -->
+					<button type="submit">Confirm</button>
+				</form>
+			</section>
+			<!-- ----------------------------------------------------------------------- -->
+			<!--                               ATTRIBUTION                               -->
+			<!-- ----------------------------------------------------------------------- -->
+			<div class="attribution">
+				Built by &nbsp;
+				<a href="https://stacksantos.dev" target="_blank">stackSantos</a>.
+			</div>
+		</section>
+
+		<script src="./app.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+			crossorigin="anonymous"
+		></script>
+	</body>
 </html>
