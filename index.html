@@ -32,7 +32,7 @@
 				<!--                            CARD FACING FRONT                            -->
 				<!-- ----------------------------------------------------------------------- -->
 				<div class="frontCardContainer container-fluid mt-5">
-					<img src="./images/bg-card-front.png" alt="" />
+					<img src="./images/bg-card-front.png" alt="" class="img-responsive" />
 					<div class="container">
 						<div id="filledCircle"></div>
 						<div id="emptyCircle"></div>
@@ -46,14 +46,14 @@
 					</div>
 
 					<!-- ----------------------------------------------------------------------- -->
-					<div class="displayExpo container-fluid my-4 mx-3 justify-content-between">
-						<div class="row align-items-center">
+					<div class="displayExpo container-fluid my-4">
+						<div class="row container-fluid">
 							<!-- CARD NAME -->
-							<div id="displayName" class="col">Jane Appleseed</div>
+							<div id="displayName">Jane Appleseed</div>
 							<!-- CARD EXPO -->
-							<div class="col expoContainer">
-							<span id="displayMonth">00</span><span>/</span>
-							<span id="displayYear">00</span>	
+							<div class="expoContainer">
+								<span id="displayMonth">00</span><span>/</span>
+								<span id="displayYear">00</span>
 							</div>
 						</div>
 					</div>
@@ -63,7 +63,7 @@
 				<!-- ----------------------------------------------------------------------- -->
 
 				<div class="backCardContainer container-fluid">
-					<img src="./images/bg-card-back.png" alt="" />
+					<img src="./images/bg-card-back.png" alt="" class="img-responsive" />
 					<div id="backInfo">000</div>
 				</div>
 			</section>
@@ -71,7 +71,7 @@
 			<!-- ----------------------------------------------------------------------- -->
 			<!--                                FORM DATA                                -->
 			<!-- ----------------------------------------------------------------------- -->
-			<section class="formContainer container-fluid ">
+			<section class="formContainer container-fluid">
 				<form action="success.html">
 					<!-- NAME AND CC NUMBER -->
 					<label for="fName" id="cName">Cardholder Name </label

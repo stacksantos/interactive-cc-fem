@@ -33,7 +33,7 @@ body {
   border-radius: 10px;
   position: fixed;
 }
-#filledCircle, #emptyCircle, #displayNumbers, .displayExpo, #displayName, .expoContainer {
+#filledCircle, #emptyCircle, #displayNumbers, #displayName, .expoContainer {
   position: relative;
 }
 #filledCircle {
@@ -56,10 +56,12 @@ body {
   font-size: 21px;
   color: white;
   top: 20px;
+  width: fit-content;
 }
 .displayExpo {
   font-size: 11px;
   color: white;
+  position: relative;
 }
 #displayName {
   text-transform: uppercase;
@@ -67,6 +69,7 @@ body {
 }
 .expoContainer {
   min-height: 100%;
+  width: fit-content;
 }
 
 
