@@ -23,23 +23,22 @@
 	</head>
 
 	<body>
-    <!-- background Image -->
-			<img src="./images/bg-main-desktop.png" alt="" class="bgImage" />
+		<!-- background Image -->
+		<img src="./images/bg-main-desktop.png" alt="" class="bgImage" />
 		<section class="main container-fluid">
-			
 			<!-- ----------------------------------------------------------------------- -->
 			<section class="cardsContainer container-fluid">
 				<!-- ----------------------------------------------------------------------- -->
 				<!--                            CARD FACING FRONT                            -->
 				<!-- ----------------------------------------------------------------------- -->
-				<div class="frontCardContainer">
+				<div class="frontCardContainer container-fluid mt-5">
 					<img src="./images/bg-card-front.png" alt="" />
-					<div class="container-fluid">
+					<div class="container">
 						<div id="filledCircle"></div>
 						<div id="emptyCircle"></div>
 					</div>
 					<!-- CARD NUMBER -->
-					<div id="displayNumbers" class="container-fluid">
+					<div id="displayNumbers" class="container-fluid mx-2 my-3">
 						<span id="nSet1">0000</span>&nbsp;<span id="nSet2">0000</span
 						>&nbsp;<span id="nSet3">0000</span>&nbsp;<span id="nSet4"
 							>0000</span
@@ -47,12 +46,15 @@
 					</div>
 
 					<!-- ----------------------------------------------------------------------- -->
-					<div class="displayExpo container-fluid mt-4">
-						<!-- CARD NAME -->
-						<div id="displayName" class="">Jane Appleseed</div>
-						<!-- CARD EXPO -->
-						<div class="expoContainer text-end">
-							<span id="displayMonth">00</span> / <span id="displayYear">00</span>
+					<div class="displayExpo container-fluid my-4 mx-3 justify-content-between">
+						<div class="row align-items-center">
+							<!-- CARD NAME -->
+							<div id="displayName" class="col">Jane Appleseed</div>
+							<!-- CARD EXPO -->
+							<div class="col expoContainer">
+							<span id="displayMonth">00</span><span>/</span>
+							<span id="displayYear">00</span>	
+							</div>
 						</div>
 					</div>
 				</div>
@@ -60,7 +62,7 @@
 				<!--                            CARD FACING BACK                             -->
 				<!-- ----------------------------------------------------------------------- -->
 
-				<div class="backCardContainer">
+				<div class="backCardContainer container-fluid">
 					<img src="./images/bg-card-back.png" alt="" />
 					<div id="backInfo">000</div>
 				</div>
@@ -69,7 +71,7 @@
 			<!-- ----------------------------------------------------------------------- -->
 			<!--                                FORM DATA                                -->
 			<!-- ----------------------------------------------------------------------- -->
-			<section class="formContainer">
+			<section class="formContainer container-fluid ">
 				<form action="success.html">
 					<!-- NAME AND CC NUMBER -->
 					<label for="fName" id="cName">Cardholder Name </label
@@ -145,7 +147,9 @@
 					</div>
 
 					<!-- CONFIRM -->
-					<button type="submit">Confirm</button>
+					<div class="d-grid">
+						<button type="submit" class="col-10 mx-auto">Confirm</button>
+					</div>
 				</form>
 			</section>
 			<!-- ----------------------------------------------------------------------- -->

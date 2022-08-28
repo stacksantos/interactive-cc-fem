@@ -10,9 +10,15 @@ body {
   height: 250px;
   z-index: -1;
   display: block;
+  position: absolute;
+  top:0;
 }
 
 /* -------------------------------------------------------------------------- */
+
+.cardsContainer {
+  margin-top: 130px;
+}
 
 /* -------------------------------------------------------------------------- */
 /*                             FRONT CARD DISPLAY                             */
@@ -20,14 +26,14 @@ body {
 
 .frontCardContainer {
   z-index: 1;
-  position: fixed;
+  position: relative;
 }
 .frontCardContainer img {
   width: 280px;
   border-radius: 10px;
-  position: absolute;
+  position: fixed;
 }
-#filledCircle, #emptyCircle, #displayNumbers, .displayExpo, #displayName {
+#filledCircle, #emptyCircle, #displayNumbers, .displayExpo, #displayName, .expoContainer {
   position: relative;
 }
 #filledCircle {
@@ -59,28 +65,32 @@ body {
   text-transform: uppercase;
   min-height: 100%;
 }
+.expoContainer {
+  min-height: 100%;
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                              BACK CARD DISPLAY                             */
 /* -------------------------------------------------------------------------- */
 .backCardContainer {
   z-index: 0;
-  position: absolute;
-  top: 50px;
-  right: 80%;
+  position: fixed;
+  top: 10%;
+  left: 22%;
 }
 .backCardContainer img {
   width: 280px;
   border-radius: 10px;
-  position: fixed;
+  position: absolute;
 }
 
 #backInfo {
-  position: fixed;
   color: white;
   font-size: 13px;
-  /* top: 63px; */
-  /* left: 220px; */
+  position: relative;
+  top: 63px;
+  left: 220px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -146,15 +156,12 @@ input:placeholder-shown{
 /* -------------------------------------------------------------------------- */
 
 button {
-  min-width: 100%;
   height: 65px;
   border-radius: 9px;
   border: none;
   background-color: hsl(278, 68%, 11%);
   color: #dfd7e1;
   font-size: 24px;
-  margin-left: 50%;
-  transform: translateX(-50%);
 }
 
 
