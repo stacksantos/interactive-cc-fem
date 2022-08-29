@@ -11,84 +11,81 @@
       href="./images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Interactive card details form</title>
+    <title>Interactive card details form</title>
 
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
     <!-- background Image -->
-    <section class="bgImage"><img src="./images/bg-main-desktop.png" alt=""></section>
-    <!-- ----------------------------------------------------------------------- -->
-    <section class="main center">
-      <section class="leftColumn">
-        <section class="cardsPreview col">
+    <section class="main">
+      <!-- ----------------------------------------------------------------------- -->
+      <section class="cardsContainer col">
+        <img src="./images/bg-main-desktop.png" alt="" class="bgImage" />
+
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                            CARD FACING FRONT                            -->
+        <!-- ----------------------------------------------------------------------- -->
+        <div class="frontCardContainer col">
+          <img src="./images/bg-card-front.png" alt="" />
+          <div id="filledCircle"></div>
+          <div id="emptyCircle"></div>
+          <!-- CARD NUMBER -->
+          <div id="displayNumbers">
+            <span id="nSet1">0000</span>&nbsp;<span id="nSet2">0000</span
+            >&nbsp;<span id="nSet3">0000</span>&nbsp;<span id="nSet4"
+              >0000</span
+            >
+          </div>
 
           <!-- ----------------------------------------------------------------------- -->
-          <!--                            CARD FACING FRONT                            -->
-          <!-- ----------------------------------------------------------------------- -->
-          <div class="frontCardContainer">
-            <img src="./images/bg-card-front.png" alt="">
-            <div class="circles">
-              <div id="filledCircle"></div>
-              <div id="emptyCircle"></div>
-            </div>
-            <div class="bottomFrontCardContainer">
-              <!-- CARD NUMBER -->
-              <div id="displayNumbers"><span id="nSet1">0000</span>&nbsp;<span id="nSet2">0000</span>&nbsp;<span id="nSet3">0000</span>&nbsp;<span id="nSet4">0000</span></div>
-
-              <!-- ----------------------------------------------------------------------- -->
-              <div class="displayExpo row">
-                <!-- CARD NAME -->
-                <div id="displayName">Jane Appleseed</div>
-
-                <!-- CARD EXPO -->
-                <div class="expoContainer">
-                  <span id="displayMonth">00</span>/<span id="displayYear">00</span> </div>
-              </div>
+          <div class="displayExpo row">
+            <!-- CARD NAME -->
+            <div id="displayName">Jane Appleseed</div>
+            <!-- CARD EXPO -->
+            <div class="expoContainer row align">
+              <span id="displayMonth">00</span>/<span id="displayYear">00</span>
             </div>
           </div>
-          <!-- ----------------------------------------------------------------------- -->
-          <!--                            CARD FACING BACK                             -->
-          <!-- ----------------------------------------------------------------------- -->
-          <div class="backCardContainer">
-            <img src="./images/bg-card-back.png" alt="">
-            <div id="backInfo">000</div>
-          </div>
-        </section>
+        </div>
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                            CARD FACING BACK                             -->
+        <!-- ----------------------------------------------------------------------- -->
+
+        <div class="backCardContainer">
+          <img src="./images/bg-card-back.png" alt="" />
+          <div id="backInfo">000</div>
+        </div>
       </section>
-      
-        <!-- ----------------------------------------------------------------------- -->
-        <!--                                FORM DATA                                -->
-        <!-- ----------------------------------------------------------------------- -->
-        <section class="formContainer col">
-        <section class="completed">
-          <div class="col align">
-            <img src="./images/icon-complete.svg" alt="">
-            <h3>Thank you!</h3>
-            <p>We've added your card details Continue</p>
-            <button type="submit">Confirm</button>
-          </div>
-        </section>
+
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                                FORM DATA                                -->
+      <!-- ----------------------------------------------------------------------- -->
+      <section class="formContainer col align">
+        <form action="success.html">
+          <section class="completed">
+            <div class="col align">
+              <img
+                src="./images/icon-complete.svg"
+                alt=""
+                id="completedCheck"
+              />
+              <h3>Thank you!</h3>
+              <p>We've added your card details Continue</p>
+              <button type="submit">Confirm</button>
+            </div>
+          </section>
+        </form>
+      </section>
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                               ATTRIBUTION                               -->
+      <!-- ----------------------------------------------------------------------- -->
+      <div class="attribution row center">
+        Built by &nbsp;
+        <a href="https://stacksantos.dev" target="_blank">stackSantos</a>.
+      </div>
     </section>
-      
 
-    <!-- ----------------------------------------------------------------------- -->
-    <!--                                COMPLETED                                -->
-    <!-- ----------------------------------------------------------------------- -->
-
-    
-
-    <!-- ----------------------------------------------------------------------- -->
-    <!--                               ATTRIBUTION                               -->
-    <!-- ----------------------------------------------------------------------- -->
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by
-      <a href="https://stacksantos.dev" target="_blank">stackSantos</a>.
-    </div>
     <script src="./app.js"></script>
   </body>
 </html>

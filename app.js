@@ -112,7 +112,7 @@ const cvcErr = document.getElementById('cvcErr');
     if (event.target.validity.valueMissing) {
       event.target.setCustomValidity('');
       event.preventDefault();
-      nameErr.innerHTML = " **You don't have a name?**";
+      nameErr.innerHTML = " **No Name?**";
     } else if (event.target.validity.tooShort) {
       event.target.setCustomValidity('');
       event.preventDefault();

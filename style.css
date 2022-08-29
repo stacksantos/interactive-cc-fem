@@ -1,102 +1,133 @@
+
 body {
   width: 100vw;
   height: 100%;
   color: #2f2534;
 }
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  color: black;
-  position: absolute;
-  bottom: 30px;
-  transform:translateX(30%);
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-.main {
+
+.bgImage {
   width: 100%;
-  height: 100%;
-  padding: 10rem 0rem;
-}
-@media screen and (max-width: 360px) {
-  .main {
-    flex-direction: column;
-    padding: 0;
-    transform: translateY(20px);
-  }
-  .attribution {
-    transform: translateX(0);
-  }
-}
-
-.formContainer {
-  width: 24rem;
-  margin-left: 4em;
-}
-
-.bgImage img {
-  position: absolute;
-  width: 30%;
-  height: 100%;
+  height: 250px;
   z-index: -1;
+  display: block;
+  position: absolute;
+  top:0;
 }
-@media screen and (max-width: 360px) {
-  body {
-    height: 100vh;
-    width: 360px;
-    overflow: hidden;
-  }
-  .bgImage img {
-    transform:rotate(90deg) translateX(-270px);
-    width: 360px;
-    height: 600px;
-  }
+
+/* -------------------------------------------------------------------------- */
+
+.cardsContainer {
+  margin-top: 130px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             FRONT CARD DISPLAY                             */
+/* -------------------------------------------------------------------------- */
+
+.frontCardContainer {
+  z-index: 1;
+  position: relative;
+}
+.frontCardContainer img {
+  width: 280px;
+  border-radius: 10px;
+  position: fixed;
+}
+#filledCircle, #emptyCircle, #displayNumbers, #displayName, .expoContainer {
+  position: relative;
+}
+#filledCircle {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  top: 17px;
+  left: 10px;
+}
+#emptyCircle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid white;
+  top: -5px;
+  left: 52px;
+}
+#displayNumbers {
+  font-size: 21px;
+  color: white;
+  top: 20px;
+  width: fit-content;
+}
+.displayExpo {
+  font-size: 11px;
+  color: white;
+  position: relative;
+}
+#displayName {
+  text-transform: uppercase;
+  min-height: 100%;
+}
+.expoContainer {
+  min-height: 100%;
+  width: fit-content;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                              BACK CARD DISPLAY                             */
+/* -------------------------------------------------------------------------- */
+.backCardContainer {
+  z-index: 0;
+  position: fixed;
+  top: 10%;
+  left: 22%;
+}
+.backCardContainer img {
+  width: 280px;
+  border-radius: 10px;
+  position: absolute;
+}
+
+#backInfo {
+  color: white;
+  font-size: 13px;
+  position: relative;
+  top: 63px;
+  left: 220px;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                  FORM INFO                                 */
 /* -------------------------------------------------------------------------- */
 
+.formContainer {
+  margin-top: 20%;
+}
+.lowerFormContainer {
+  width: 50%;
+}
 form {
   font-size: 15px;
   text-transform: uppercase;
+  width: 90%;
 }
 
 input {
-  font-size: 15px;
-  border-radius: 5px;
+  font-size: 20px;
+  border-radius: 10px;
   border: 1px solid #e0e0e0;
-  padding: 9px;
   margin-bottom: 18px;
   margin-top: 5px;
+  width: 85vw;
+  min-height: 35px;
+  padding: .3em .5em;
 }
 
-input::placeholder {
-  color: #d3d3d3;
+input:placeholder-shown{
+  color: #aaaaaa;
+  font-size: 20px;
 }
 
-.placeholder {
-  width: 96%;
-}
-@media screen and (max-width: 360px) {
-  form {
-    width: 85%;
-    height: 100%;
-  }
-  input {
-    padding: 16px;
-  }
-  .formContainer {
-    width: 100%;
-    margin-left: 50%;
-    transform:translateX(-20%);
-    margin-bottom: 0;
-  }
-  input::placeholder {
-    font-size: 18px;
-  }
-}
 /* -------------------------------------------------------------------------- */
 /*                                  EXPO DATE                                 */
 /* -------------------------------------------------------------------------- */
@@ -104,156 +135,41 @@ input::placeholder {
 #fMonth,
 #fYear {
   width: 40px;
-  /* margin-bottom: 30px; */
 }
+
 #fMonth,
 #fYear,
 #fCvc {
   margin-bottom: 30px;
 }
+.cvcContainer {
+  margin-left: 10%;
+}
+#fCvc {
+  width: 80px;
+}
+#fMonth {
+  margin-right: 8px;
+}
 #fYear {
-  margin-left: 8px;
+  margin-right: 40px;
 }
-@media screen and (max-width: 360px) {
-  #fCvc {
-    width: 100px;
-  }
-}
+
 
 /* -------------------------------------------------------------------------- */
 
 button {
-  padding: 10px;
-  width: 100%;
+  height: 65px;
   border-radius: 9px;
   border: none;
   background-color: hsl(278, 68%, 11%);
   color: #dfd7e1;
-}
-@media screen and (max-width: 360px) {
-  button {
-    padding: 25px;
-  }
-}
-
-/* -------------------------------------------------------------------------- */
-
-/* -------------------------------------------------------------------------- */
-/*                             FRONT CARD DISPLAY                             */
-/* -------------------------------------------------------------------------- */
-
-.frontCardContainer {
-  transform: translate(-4em, 2em);
-  position: relative;
-  height: 100%;
-}
-.frontCardContainer img {
-  width: 23rem;
-  border-radius: 10px;
-}
-#filledCircle {
-  position: relative;
-  background-color: white;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  transform: translate(1.5em, -11.8em);
-}
-#emptyCircle {
-  position: relative;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 1px solid white;
-  transform: translate(4.6em, -13.4em);
-}
-#displayNumbers {
-  position: relative;
-  transform: translate(1.2em, -5.4em);
   font-size: 24px;
-  color: white;
-}
-.displayExpo {
-  transform: translate(0em, -11em);
-  font-size: 11px;
-  padding: 0em 2em;
-  color: white;
-}
-#displayName {
-  position: relative;
-  margin-left: 7px;
-  text-transform: uppercase;
-  min-height: 100%;
-}
-.expoContainer {
-  position: absolute;
-  bottom: 0;
-  right: 20px;
-}
-@media screen and (max-width: 360px) {
-  .frontCardContainer {
-    transform: translate(-20px, -20px);
-    z-index: 1;
-  }
-  .frontCardContainer img {
-    width: 18rem;
-  }
-  #filledCircle {
-    width: 30px;
-    height: 30px;
-    transform: translate(1.5em, -8.8em)
-  }
-  #emptyCircle {
-    width: 12px;
-    height: 12px;
-    transform: translate(3.8em, -10.2em);
-  }
-  #displayNumbers {
-    font-size: 22px;
-    margin-bottom: 8px;
-  }
-  .expoContainer{
-    right: 100px;
-    color: white;
-    right: 20px;
-  }
-  .cardsPreview {
-    height: 150px;
-  }
-}
-/* -------------------------------------------------------------------------- */
-/*                              BACK CARD DISPLAY                             */
-/* -------------------------------------------------------------------------- */
-
-.backCardContainer {
-  position: relative;
-  transform: translateY(-3em);
-}
-.backCardContainer img {
-  width: 23rem;
-  border-radius: 10px;
-  position: relative;
 }
 
-#backInfo {
-  position: relative;
-  transform: translate(18em, -7.4em);
-  color: white;
-}
-@media screen and (max-width: 360px) {
-  .backCardContainer {
-    transform: translate(1.6em,-16.8em);
-  }
-  .backCardContainer img {
-    width: 18rem;
-    z-index: -1;
-  }
-  #backInfo {
-    color: white;
-    width: 10px;
-    transform: translate(13.5em, -6.2em);
-  }
-}
+
+
+
 /* -------------------------------------------------------------------------- */
 /*                           COMPLETED CONFIRMATION                           */
 /* -------------------------------------------------------------------------- */
@@ -262,7 +178,7 @@ button {
   height: 100%;
   width: 100%;
 }
-.completed img {
+#completedCheck {
   margin-bottom: 3em;
   width: 6em;
 }
@@ -289,10 +205,24 @@ button {
 }
 #expoErr {
   position: absolute;
-  transform: translate(0px,70px);
+  transform: translateY(80px);
 }
 
 #cvcErr {
   position: absolute;
-  transform: translate(-200px,45px);
+  transform: translateY(80px);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 ATTRIBUTION                                */
+/* -------------------------------------------------------------------------- */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: black;
+  margin-top: 40px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
