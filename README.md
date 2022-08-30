@@ -31,9 +31,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-//TODO add screenshot
+![cc-fem-screenshot](https://user-images.githubusercontent.com/100369086/187326222-ed645a5e-321d-447c-8de6-aa09c7763ca2.png)
 
 ### Links
 
