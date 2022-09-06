@@ -1,4 +1,4 @@
-# Frontend Mentor - Interactive card details form solution
+# Interactive card details form
 
 This is a solution to the [Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw).
 
@@ -12,7 +12,6 @@ This is a solution to the [Interactive card details form challenge on Frontend M
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 
@@ -35,8 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Visit Site](https://stacksantos.github.io/interactive-cc-fem/)
 
 ## My process
 
